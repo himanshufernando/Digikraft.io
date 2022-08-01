@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+
+
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "digikraft.project.digikraft"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        }
+
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path 'src/main/jni/Android.mk'
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    kapt {
+        correctErrorTypes true
+    }
+}
+
+//$rootProject.
+dependencies {
+
+    implementation "androidx.core:core-ktx:$rootProject.core_ktx"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.androidxJunitVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
+
+
+
+    implementation("androidx.navigation:navigation-fragment-ktx:$rootProject.nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$rootProject.nav_version")
+    androidTestImplementation("androidx.navigation:navigation-testing:$rootProject.nav_version")
+
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+
+    // Kotlin components
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$rootProject.kotlin_version"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+
+    // UI
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$rootProject.okhttp3"))
+
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit"
+
+
+    implementation "com.google.android.gms:play-services-maps:$rootProject.maps"
+
+    implementation "com.airbnb.android:lottie:$rootProject.lottie"
+
+
+    implementation("com.google.dagger:hilt-android:$rootProject.hilt")
+    kapt("com.google.dagger:hilt-android-compiler:$rootProject.hilt")
+
+    testImplementation "com.google.dagger:hilt-android-testing:$rootProject.hilt_compiler"
+
+    implementation "com.google.maps.android:android-maps-utils:$rootProject.android_maps"
+    implementation "com.google.android.gms:play-services-location:$rootProject.services_location"
+}

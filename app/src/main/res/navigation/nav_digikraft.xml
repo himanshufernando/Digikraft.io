@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_splash"
+    android:id="@+id/nav_digikraft">
+
+
+
+
+
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="digikraft.project.digikraftbikestation.ui.fragment.splash.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/fragment_splash_to_bike_station"
+            app:destination="@id/fragment_bike_station"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/fragment_bike_station"
+        android:name="digikraft.project.digikraftbikestation.ui.fragment.bikeStations.BikeStationFragment"
+        android:label="Bike_Station"
+        tools:layout="@layout/fragment_bike_station">
+
+        <action
+            android:id="@+id/fragment_bike_station_to_details"
+            app:destination="@id/fragment_bike_station_details"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragment_bike_station_details"
+        android:name="digikraft.project.digikraftbikestation.ui.fragment.bikestationdetails.BikeStationDetailsFragment"
+        android:label="Bike_Station_Details"
+        tools:layout="@layout/fragment_bike_station_details">
+
+
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="layout_margin_10">10dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="layout_width_0">0dp</dimen>
+    <dimen name="layout_margin_5">5dp</dimen>
+    <dimen name="layout_margin_20">20dp</dimen>
+    <dimen name="list_card_height">200dp</dimen>
+    <dimen name="layout_width_200">200dp</dimen>
+    <dimen name="layout_height_200">200dp</dimen>
+</resources>
